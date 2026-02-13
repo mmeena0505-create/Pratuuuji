@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Pratibha ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+text-align:center;
+font-family:cursive;
+background:linear-gradient(45deg,#ff9ecf,#ff69b4);
+color:white;
+overflow-y:auto;
+}
+
+.section{
+display:none;
+min-height:100vh;
+padding:40px 20px;
+}
+
+.active{
+display:block;
+animation:fadeIn 1.5s;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:white;
+color:hotpink;
+cursor:pointer;
+margin-top:25px;
+box-shadow:0 0 15px white;
+}
+
+.nickname{
+position:absolute;
+font-size:28px;
+animation:pop 3s forwards;
+}
+
+@keyframes pop{
+0%{transform:scale(0);opacity:0;}
+40%{transform:scale(1.3);opacity:1;}
+100%{transform:scale(1);opacity:0;}
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{top:-10%;opacity:1;}
+100%{top:110%;opacity:0;}
+}
+
+img{
+width:230px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 25px white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<div class="section active" id="s1">
+<h1>
+Pratuuu parat me pakaya khane me bada mja aaya 😋💞<br><br>
+Or subh me bathroom se chillaya pratuuu aaya pratuuu aaya 😁🤭
+</h1>
+
+<img src="https://media.tenor.com/9ZQZ7gK1v9MAAAAi/cute-love.gif">
+
+<br>
+<button onclick="next(2)">Next</button>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+<h1>
+Aloo ka chalu beta kaha gye the 😁<br>
+Pratuuu ki tokri me so rahe the 🥰<br>
+Pratuuu me laat mari roo rahe the 😭<br>
+Phir pratuuu ki kissi milli nach lahe the 😁🥰
+</h1>
+
+<img src="https://media.tenor.com/Vq4L0G6mXGgAAAAi/couple-hug.gif">
+
+<br>
+<button onclick="next(3)">Next</button>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+<h1>💕 Love & Nickname Rain 💕</h1>
+<button onclick="startNicknames()">Start</button>
+<br><br>
+<button id="nextBtn" style="display:none;" onclick="next(4)">Next</button>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+<h1 style="line-height:1.8;">
+
+Pratibha i love uh so much me tumse iss kadar mohobbat krne lga hu ki tuje dekhe sune Bina khaali khaali lgta hai esa lgta hai zindagi ke rang ud gye ho par tere aane se tune muje har uss cheej se wakhif kraya hai jiske me kabil tha or har cheej me khushi or pyar dhundna sikhaya hai tere pyar ne muje iss kadar badal diya ki abb me saari glt adate piche chord ke aa gya Mere liye bass tu jaroori hai tere alwa muje meri life me koi nhi chahiye tu meri family ka ek hissa ban chuki hai Tu wifey hai meri tu humesha mere sath rehna tuje kabhi akela nhi chordunga me humesha tere sath rahunga or tu to janti hai Tere romeo se jada tuje koi nhi chah skta 🤗😁 Pyar bohot jada krta hu yaar tujse Tere sath masti krne me bohot mja aata hai Or apki gussi se to dar lgta hai yaal Par kya kare mumma hai dat bhi deti hai or pyar bhi krti hai par muje Good boy bna ke rakhti hai 🥰 Abb mene isse pehele bohot funny funny poem boli na abb ye suno
+
+<br><br>
+
+Chand se bate kya kru me tere pass hone ka gurur jo hai 🌙  
+Or apke ishq ne badla muje kaafi tarah se  
+Hum bhi kyu na badalte app humare huzur jo hai 🥰
+
+</h1>
+
+<img src="https://media.tenor.com/5UuKJ0pXgKQAAAAi/love-hearts.gif">
+
+<h2>Pratibha will you be my valentine? 💘</h2>
+
+<button onclick="celebrate()">Yes</button>
+<button id="noBtn" onmouseover="moveNo()">No</button>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+<h1>She Said YESSSSS ❤️🎉</h1>
+<img src="https://media.tenor.com/5UuKJ0pXgKQAAAAi/love-hearts.gif">
+<h2>I Love You Forever Pratibha 💖</h2>
+</div>
+
+<script>
+
+function next(num){
+document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+document.getElementById("s"+num).classList.add("active");
+}
+
+function moveNo(){
+let btn=document.getElementById("noBtn");
+btn.style.position="absolute";
+btn.style.top=Math.random()*80+"%";
+btn.style.left=Math.random()*80+"%";
+}
+
+function celebrate(){
+next(5);
+createHearts(80);
+}
+
+function createHearts(count){
+for(let i=0;i<count;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML=["❤️","💖","💕","💘","😍"][Math.floor(Math.random()*5)];
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+}
+}
+
+function startNicknames(){
+createHearts(40);
+
+let names=[
+"Chotu 🤭",
+"Pyalu mummalaaa 😁",
+"Mumma ji 🤗",
+"Aloo pakoli 😋",
+"Pratuuu beta 🥰",
+"Mera bacha 😘😘",
+"Shehzadi 🥰",
+"Meri choti bachi 🥰",
+"Jivda 🥰"
+];
+
+let i=0;
+let interval=setInterval(()=>{
+if(i>=names.length){
+clearInterval(interval);
+document.getElementById("nextBtn").style.display="inline-block";
+return;
+}
+let nick=document.createElement("div");
+nick.className="nickname";
+nick.innerHTML=names[i];
+nick.style.top=Math.random()*70+"%";
+nick.style.left=Math.random()*70+"%";
+document.body.appendChild(nick);
+i++;
+},3000);
+}
+
+</script>
+
+</body>
+</html>
